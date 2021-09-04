@@ -238,6 +238,10 @@ drag-scroll {
     width: 1100px;
 }
 
+.dragContainer {
+    padding: 0 0 0 15px;
+}
+
 
 /* Destination section end */
 

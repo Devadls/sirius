@@ -67,7 +67,7 @@
         </div>
         <div class="dragContainer">
             <drag-scroll #dragScroll class="featuredOverlay" *ngIf="destinationData && destinationData.length > 0">
-                <div drag-scroll-item class="featuredContainer" [style.marginLeft.px]="dragMoveLeft" [style.width.px]="destinationData.length * 320">
+                <div drag-scroll-item class="featuredContainer" [style.marginLeft.px]="dragMoveLeft" [style.width.px]="destinationData.length * 240">
                     <div class="featureBlock" *ngFor="let data of destinationData">
                         <div class="featuredGrid" [ngStyle]="{'background-image': 'url(' + data.imageUrl + ')'}"></div>
                         <p>{{data.city ? data.city : ''}}</p>

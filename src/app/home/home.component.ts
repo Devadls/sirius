@@ -72,7 +72,6 @@ timerLoad:string = '';
 
 getDestination(){
   this.appservice.getDestinationList().subscribe((data:any) =>{
-    console.log(data);
     if(data){
       setTimeout(() =>{
         this.fadeInClass = true;
@@ -82,9 +81,6 @@ getDestination(){
         if(window.innerWidth > 1100){
           this.dragMoveLeft = (window.innerWidth - 1100) / 2;
         }
-        setTimeout(() => {
-          this.ds.moveTo(0);
-        }, 0);
       }
     }
   })
@@ -92,7 +88,6 @@ getDestination(){
 
   getCloud(){
     this.appservice.getWeatherList().subscribe((data:any) =>{
-      console.log(data);
       let result = data;
       if(data && data){
         this.cloudData = data.result ? data.result : [];
@@ -111,6 +106,12 @@ getDestination(){
           return;
       }
       this.fadeInSuccess = true;
+      this.submitted = false;
+      this.quoteForm.reset();
+      setTimeout(()=>{
+        this.fadeInSuccess = false;
+      },3000);
+      
   }
 
   // event for only number input type
